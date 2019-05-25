@@ -10,30 +10,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.unicarioca.domain.Categoria;
-import br.com.unicarioca.repositories.CategoriaRepository;
-import br.com.unicarioca.services.CategoriaService;
+import br.com.unicarioca.domain.Cliente;
+import br.com.unicarioca.repositories.ClienteRepository;
+import br.com.unicarioca.services.ClienteService;
 
 @RestController
-@RequestMapping(value = "/categorias")
+@RequestMapping(value = "/clientes")
 @CrossOrigin
-public class CategoriaResource {
+public class ClienteResource {
 
 	@Autowired
-	private CategoriaService service;
+	private ClienteService service;
 
 	@Autowired
-	private CategoriaRepository categoriaRepository;
-
+	ClienteRepository clienteRepository;
 
 	@RequestMapping(method = RequestMethod.GET)
-	public List<Categoria> listarTodos() {
-		return this.categoriaRepository.findAll();
+	public List<Cliente> listarTodos() {
+		return this.clienteRepository.findAll();
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<?> listar(@PathVariable Integer id) {
-		Categoria obj = service.buscar(id);
+		Cliente obj = service.buscar(id);
 		return ResponseEntity.ok().body(obj);
 	}
 }
