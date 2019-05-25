@@ -9,9 +9,11 @@
 		<version>1.5.19.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
+	
 	<groupId>br.com.unicarioca</groupId>
 	<artifactId>venda-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>venda-api</name>
 	<description>Demo project for Spring Boot</description>
 
