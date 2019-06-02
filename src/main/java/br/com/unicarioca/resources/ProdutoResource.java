@@ -21,7 +21,7 @@ import br.com.unicarioca.services.ProdutoService;
 
 @RestController
 @RequestMapping(value="/produtos")
-@CrossOrigin(origins = "http://localhost:8100")
+@CrossOrigin
 public class ProdutoResource {
 	
 	@Autowired
